@@ -8,7 +8,6 @@ import vue from 'vue'
 const imagefill = {}
 let imagefillDirective = {
   center: {
-    // 图片居中切割
     inserted: function (el, binding) {
       el.onload = (e) => {
         let w = el.naturalWidth
@@ -29,7 +28,6 @@ let imagefillDirective = {
     }
   },
   flex: {
-    // 容器自适应
     inserted: function (el, binding) {
       addClass(el, 'flex-box')
       var div = document.createElement('div')

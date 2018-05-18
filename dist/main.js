@@ -8183,8 +8183,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var imagefill = {};
 var imagefillDirective = {
   center: {
-    // 图片居中切割
     inserted: function inserted(el, binding) {
+      var hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter';
+      var vCenter = binding.modifiers.full ? 'Vcenter-full' : 'Vcenter';
+      if (binding.value) {
+        el.src = binding.value;
+      }
       el.onload = function (e) {
         var w = el.naturalWidth;
         var h = el.naturalHeight;
@@ -8194,48 +8198,22 @@ var imagefillDirective = {
         var pRatio = pw / ph;
 
         if (pRatio > ratio) {
-          (0, _event.removeClass)(el, 'Hcenter');
-          (0, _event.addClass)(el, 'Vcenter');
+          (0, _event.removeClass)(el, hCenter);
+          (0, _event.addClass)(el, vCenter);
         } else {
-          (0, _event.removeClass)(el, 'Vcenter');
-          (0, _event.addClass)(el, 'Hcenter');
+          (0, _event.removeClass)(el, vCenter);
+          (0, _event.addClass)(el, hCenter);
         }
       };
     }
   },
   flex: {
-    // 容器自适应
     inserted: function inserted(el, binding) {
       (0, _event.addClass)(el, 'flex-box');
       var div = document.createElement('div');
       div.className = 'expansion';
       div.style.paddingBottom = binding.value * 100 + '%';
       el.appendChild(div);
-    }
-  },
-  src: {
-    inserted: function inserted(el, binding) {
-      var pw = el.parentNode.offsetWidth;
-      var ph = el.parentNode.offsetHeight;
-      if (binding.modifiers.center) {
-        el.src = binding.value + '?x-oss-process=image/resize,m_fill,h_' + parseInt(ph) + ',w_' + parseInt(pw);
-
-        el.onload = function (e) {
-          var w = el.naturalWidth;
-          var h = el.naturalHeight;
-          var ratio = w / h;
-          var pRatio = pw / ph;
-          if (pRatio > ratio) {
-            (0, _event.removeClass)(el, 'Hcenter');
-            (0, _event.addClass)(el, 'Vcenter');
-          } else {
-            (0, _event.removeClass)(el, 'Vcenter');
-            (0, _event.addClass)(el, 'Hcenter');
-          }
-        };
-      } else {
-        el.src = binding.value + '?x-oss-process=image/resize,m_lfit,h_' + parseInt(ph) + ',w_' + parseInt(pw);
-      }
     }
   }
 };

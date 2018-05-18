@@ -11,6 +11,10 @@ export default {
       if (binding.value) {
         el.src = binding.value
       }
+
+      if (el.parentElement.style.position !== 'relative') {
+        el.parentElement.style.position = 'relative'
+      }
       el.onload = (e) => {
         let w = el.naturalWidth
         let h = el.naturalHeight

@@ -1,5 +1,6 @@
 // var webpack = require("webpack")
-var path = require('path')
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   target: 'node',
@@ -19,16 +20,35 @@ module.exports = {
   },
   mode: 'development',
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: [
-          ['es2015', { modules: false }]
-        ],
-        cacheDirectory: true
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
-    }]
-  }
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          extractCSS: true
+        }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: [
+            ['es2015', { modules: false }]
+          ],
+          cacheDirectory: true
+        },
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+  ]
 }

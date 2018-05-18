@@ -1,6 +1,6 @@
 {
   "name": "vue-imagefill",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "The Vue directive for making images fill their containers",
   "main": "./src/index.js",
   "scripts": {
@@ -42,12 +42,16 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-component": "^1.1.1",
     "babel-preset-es2015": "^6.22.0",
+    "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.3",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.1.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "style-loader": "^0.21.0",
     "vue": "^2.5.16",
+    "vue-loader": "^15.0.11",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",
     "webpack-node-externals": "^1.5.4"

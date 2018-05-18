@@ -4,8 +4,9 @@ import {
 } from './event.js'
 import vue from 'vue'
 
-const imagefill = {}
-let imagefillDirective = {
+// const imagefill = {}
+export default {
+// let imagefillDirective = {
   center: {
     inserted: function (el, binding) {
       let hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter'
@@ -42,10 +43,10 @@ let imagefillDirective = {
   }
 }
 
-Object.keys(imagefillDirective).forEach(key => {
-  imagefill[key] = vue.directive(key, imagefillDirective[key])
-})
+// Object.keys(imagefillDirective).forEach(key => {
+//   imagefill[key] = vue.directive(key, imagefillDirective[key])
+// })
 
-export default {
-  imagefill
-}
+// export default {
+//   imagefill
+// }

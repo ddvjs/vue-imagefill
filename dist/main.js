@@ -8114,9 +8114,25 @@ if (inBrowser) {
 "use strict";
 
 
-var Imagefill = __webpack_require__(/*! ./lib */ "./src/lib/index.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-module.exports = Imagefill.default;
+var _lib = __webpack_require__(/*! ./lib */ "./src/lib/index.js");
+
+var _lib2 = _interopRequireDefault(_lib);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// module.exports = Imagefill.default
+exports.default = {
+  install: function install(Vue) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    Vue.directive('flex', _lib2.default.flex);
+    Vue.directive('center', _lib2.default.center);
+  }
+}; // const Imagefill = require('./lib')
 
 /***/ }),
 
@@ -8180,8 +8196,9 @@ var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var imagefill = {};
-var imagefillDirective = {
+// const imagefill = {}
+exports.default = {
+  // let imagefillDirective = {
   center: {
     inserted: function inserted(el, binding) {
       var hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter';
@@ -8216,14 +8233,15 @@ var imagefillDirective = {
       el.appendChild(div);
     }
   }
-};
 
-Object.keys(imagefillDirective).forEach(function (key) {
-  imagefill[key] = _vue2.default.directive(key, imagefillDirective[key]);
-});
+  // Object.keys(imagefillDirective).forEach(key => {
+  //   imagefill[key] = vue.directive(key, imagefillDirective[key])
+  // })
 
-exports.default = {
-  imagefill: imagefill
+  // export default {
+  //   imagefill
+  // }
+
 };
 
 /***/ })

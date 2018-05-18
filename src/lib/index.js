@@ -2,11 +2,8 @@ import {
   addClass,
   removeClass
 } from './event.js'
-import vue from 'vue'
 
-// const imagefill = {}
 export default {
-// let imagefillDirective = {
   center: {
     inserted: function (el, binding) {
       let hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter'
@@ -42,11 +39,3 @@ export default {
     }
   }
 }
-
-// Object.keys(imagefillDirective).forEach(key => {
-//   imagefill[key] = vue.directive(key, imagefillDirective[key])
-// })
-
-// export default {
-//   imagefill
-// }

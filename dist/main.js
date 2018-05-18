@@ -166,6 +166,10 @@ exports.default = {
       if (binding.value) {
         el.src = binding.value;
       }
+
+      if (el.parentElement.style.position !== 'relative') {
+        el.parentElement.style.position = 'relative';
+      }
       el.onload = function (e) {
         var w = el.naturalWidth;
         var h = el.naturalHeight;

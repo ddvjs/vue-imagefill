@@ -159,43 +159,39 @@ Object.defineProperty(exports, "__esModule", {
 var _event = __webpack_require__(/*! ./event.js */ "./src/lib/event.js");
 
 exports.default = {
-  center: {
-    inserted: function inserted(el, binding) {
-      var hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter';
-      var vCenter = binding.modifiers.full ? 'Vcenter-full' : 'Vcenter';
-      if (binding.value) {
-        el.src = binding.value;
-      }
-
-      if (el.parentElement.style.position !== 'relative') {
-        el.parentElement.style.position = 'relative';
-      }
-      el.onload = function (e) {
-        var w = el.naturalWidth;
-        var h = el.naturalHeight;
-        var pw = el.parentNode.offsetWidth;
-        var ph = el.parentNode.offsetHeight;
-        var ratio = w / h;
-        var pRatio = pw / ph;
-
-        if (pRatio > ratio) {
-          (0, _event.removeClass)(el, hCenter);
-          (0, _event.addClass)(el, vCenter);
-        } else {
-          (0, _event.removeClass)(el, vCenter);
-          (0, _event.addClass)(el, hCenter);
-        }
-      };
+  center: function center(el, binding) {
+    var hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter';
+    var vCenter = binding.modifiers.full ? 'Vcenter-full' : 'Vcenter';
+    if (binding.value) {
+      el.src = binding.value;
     }
+
+    if (el.parentElement.style.position !== 'relative') {
+      el.parentElement.style.position = 'relative';
+    }
+    el.onload = function (e) {
+      var w = el.naturalWidth;
+      var h = el.naturalHeight;
+      var pw = el.parentNode.offsetWidth;
+      var ph = el.parentNode.offsetHeight;
+      var ratio = w / h;
+      var pRatio = pw / ph;
+
+      if (pRatio > ratio) {
+        (0, _event.removeClass)(el, hCenter);
+        (0, _event.addClass)(el, vCenter);
+      } else {
+        (0, _event.removeClass)(el, vCenter);
+        (0, _event.addClass)(el, hCenter);
+      }
+    };
   },
-  flex: {
-    inserted: function inserted(el, binding) {
-      (0, _event.addClass)(el, 'flex-box');
-      var div = document.createElement('div');
-      div.className = 'expansion';
-      div.style.paddingBottom = binding.value * 100 + '%';
-      el.appendChild(div);
-    }
+  flex: function flex(el, binding) {
+    (0, _event.addClass)(el, 'flex-box');
+    var div = document.createElement('div');
+    div.className = 'expansion';
+    div.style.paddingBottom = binding.value * 100 + '%';
+    el.appendChild(div);
   }
 };
 

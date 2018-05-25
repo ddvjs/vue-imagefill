@@ -188,6 +188,7 @@ exports.default = {
   },
   flex: function flex(el, binding) {
     (0, _event.addClass)(el, 'flex-box');
+    if (el.getElementsByClassName('expansion').length) return;
     var div = document.createElement('div');
     div.className = 'expansion';
     div.style.paddingBottom = binding.value * 100 + '%';

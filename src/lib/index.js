@@ -33,6 +33,7 @@ export default {
   },
   flex: function (el, binding) {
     addClass(el, 'flex-box')
+    if (el.getElementsByClassName('expansion').length) return
     var div = document.createElement('div')
     div.className = 'expansion'
     div.style.paddingBottom = binding.value * 100 + '%'

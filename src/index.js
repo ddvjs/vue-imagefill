@@ -2,9 +2,11 @@ import Imagefill from './lib'
 require('./lib/style/vue-imagefill.css')
 
 export default {
-  install(Vue) {
-    Object.keys(Imagefill).forEach(key => {
-      Vue.directive(key, Imagefill[key])
-    })
+  install: function install(Vue) {
+    for (var key in Imagefill) {
+      if (Imagefill.hasOwnProperty(key)) {
+        Vue.directive(key, Imagefill[key])        
+      }
+    }
   }
 }

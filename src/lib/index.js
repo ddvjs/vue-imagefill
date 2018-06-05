@@ -1,12 +1,10 @@
-import {
-  addClass,
-  removeClass
-} from './event.js'
+import events from './event.js'
 
 export default {
-  center: function (el, binding) {
+  center: function center(el, binding) {
     let hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter'
     let vCenter = binding.modifiers.full ? 'Vcenter-full' : 'Vcenter'
+
     if (binding.value) {
       el.src = binding.value
     }
@@ -23,16 +21,17 @@ export default {
       let pRatio = pw / ph
 
       if (pRatio > ratio) {
-        removeClass(el, hCenter)
-        addClass(el, vCenter)
+        events.removeClass(el, hCenter)
+        events.addClass(el, vCenter)
       } else {
-        removeClass(el, vCenter)
-        addClass(el, hCenter)
+        events.removeClass(el, vCenter)
+        events.addClass(el, hCenter)
       }
     }
   },
-  flex: function (el, binding) {
-    addClass(el, 'flex-box')
+  flex: function flex(el, binding) {
+    events.addClass(el, 'flex-box')
+
     if (el.getElementsByClassName('expansion').length) return
     var div = document.createElement('div')
     div.className = 'expansion'

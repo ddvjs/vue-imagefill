@@ -18,8 +18,8 @@ function removeClass (elements, className) {
   }
 }
 
-module.exports = {
-  hasClass,
-  addClass,
-  removeClass
+export default {
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass
 }

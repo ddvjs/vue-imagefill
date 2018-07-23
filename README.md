@@ -22,6 +22,14 @@ $ npm install vue-imagefill
 import Vue from 'vue'
 import vueImagefill from 'vue-imagefill'
 Vue.use(vueImagefill)
+
+export default {
+  data () {
+    return {
+      img: require('~/assets/images/text.jpg')
+    }
+  }
+}
 ```
 
 ```style
@@ -34,3 +42,8 @@ img {
   width: 100%;
 }
 ```
+## Options
+|directives|description|default|options|
+|:---|---|---|---|
+| `v-flex`|image scaling|`1`|`Number`|
+| `v-center`|image src or none| | |

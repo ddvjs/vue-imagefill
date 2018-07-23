@@ -189,7 +189,7 @@ exports.default = {
       el.src = binding.value;
     }
 
-    if (el.parentElement.style.position !== 'relative') {
+    if (el && el.parentElement && el.parentElement.style && el.parentElement.style.position !== 'relative') {
       el.parentElement.style.position = 'relative';
     }
     el.onload = function (e) {

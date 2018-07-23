@@ -1,11 +1,36 @@
 # vue-imagefill
->vue图片填充指令，支持vue2.0以上
+>A Vue.js 2.0 images fill directives
 
->现在还是测试版，请勿使用，有空再修
-## 安装
-
-**npm:**
+## Install
 
 ```shell
 $ npm install vue-imagefill
+```
+
+## Usage
+```html
+<template>
+  <div>
+    <div class="image-wrap" v-flex="1">
+      <img v-center="img">
+    </div>
+  </div>
+</template>
+```
+
+```javascript
+import Vue from 'vue'
+import vueImagefill from 'vue-imagefill'
+Vue.use(vueImagefill)
+```
+
+```style
+.image-wrap {
+  width: 200px;
+  overflow: hidden;
+  margin: 150px auto;
+}
+img {
+  width: 100%;
+}
 ```

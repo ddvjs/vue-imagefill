@@ -2,7 +2,7 @@
   "name": "vue-imagefill",
   "version": "0.1.3",
   "description": "The Vue directive for making images fill their containers",
-  "main": "./src/index.js",
+  "main": "./dist/main.js",
   "scripts": {
     "lint": "eslint --ext .js lib --ignore-pattern dist",
     "dist": "npm run lint&&webpack",

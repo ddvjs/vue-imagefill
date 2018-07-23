@@ -44,7 +44,7 @@ img {
 }
 ```
 
-![performance-demo](http://2.img.sic.wiki//upload/other/62d9c1575F0b92744242E9D582.jpg)
+![demo](http://2.img.sic.wiki//upload/other/62d9c1575F0b92744242E9D582.jpg)
 
 ## Options
 |directives|description|default|options|

@@ -21,7 +21,7 @@ $ npm install vue-imagefill
 ```javascript
 import Vue from 'vue'
 import vueImagefill from 'vue-imagefill'
-import 'vue-imagefill/src/lib/style/vue-imagefill.css'
+import 'vue-imagefill/src/style/vue-imagefill.css'
 Vue.use(vueImagefill)
 
 export default {

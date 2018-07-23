@@ -184,8 +184,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = {
   center: function center(el, binding) {
-    var hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter';
-    var vCenter = binding.modifiers.full ? 'Vcenter-full' : 'Vcenter';
+    var hCenter = binding.modifiers.full ? 'v-imgfill-h-center-full' : 'v-imgfill-h-center';
+    var vCenter = binding.modifiers.full ? 'v-imgfill-v-center-full' : 'v-imgfill-v-center';
 
     if (binding.value) {
       el.src = binding.value;
@@ -212,11 +212,11 @@ exports.default = {
     };
   },
   flex: function flex(el, binding) {
-    _event2.default.addClass(el, 'flex-box');
+    _event2.default.addClass(el, 'v-imgfill-flex-box');
 
-    if (el.getElementsByClassName('expansion').length) return;
+    if (el.getElementsByClassName('v-imgfill-expansion').length) return;
     var div = document.createElement('div');
-    div.className = 'expansion';
+    div.className = 'v-imgfill-expansion';
     div.style.paddingBottom = binding.value * 100 + '%';
     el.appendChild(div);
   }

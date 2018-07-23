@@ -44,7 +44,7 @@ module.exports = {
             ['es2015', { modules: false }]
           ],
           cacheDirectory: true
-        },
+        }
       }
     ]
   },

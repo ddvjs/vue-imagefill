@@ -1,9 +1,9 @@
 import events from './event.js'
 
 export default {
-  center: function center(el, binding) {
-    let hCenter = binding.modifiers.full ? 'Hcenter-full' : 'Hcenter'
-    let vCenter = binding.modifiers.full ? 'Vcenter-full' : 'Vcenter'
+  center: function center (el, binding) {
+    let hCenter = binding.modifiers.full ? 'v-imgfill-h-center-full' : 'v-imgfill-h-center'
+    let vCenter = binding.modifiers.full ? 'v-imgfill-v-center-full' : 'v-imgfill-v-center'
 
     if (binding.value) {
       el.src = binding.value
@@ -29,12 +29,12 @@ export default {
       }
     }
   },
-  flex: function flex(el, binding) {
-    events.addClass(el, 'flex-box')
+  flex: function flex (el, binding) {
+    events.addClass(el, 'v-imgfill-flex-box')
 
-    if (el.getElementsByClassName('expansion').length) return
+    if (el.getElementsByClassName('v-imgfill-expansion').length) return
     var div = document.createElement('div')
-    div.className = 'expansion'
+    div.className = 'v-imgfill-expansion'
     div.style.paddingBottom = binding.value * 100 + '%'
     el.appendChild(div)
   }

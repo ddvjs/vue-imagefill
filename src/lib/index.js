@@ -1,7 +1,7 @@
 import events from './event.js'
 
 export default {
-  center: function center (el, binding) {
+  center (el, binding) {
     let hCenter = binding.modifiers.full ? 'v-imgfill-h-center-full' : 'v-imgfill-h-center'
     let vCenter = binding.modifiers.full ? 'v-imgfill-v-center-full' : 'v-imgfill-v-center'
 
@@ -29,7 +29,7 @@ export default {
       }
     }
   },
-  flex: function flex (el, binding) {
+  flex (el, binding) {
     events.addClass(el, 'v-imgfill-flex-box')
 
     if (el.getElementsByClassName('v-imgfill-expansion').length) return

@@ -17,6 +17,7 @@
   position: relative;
   display: block;
   overflow: hidden;
+  
 }
 .v-imgfill-v-center, .v-imgfill-h-center {
   position: absolute;

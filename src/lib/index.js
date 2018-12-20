@@ -28,11 +28,15 @@ export default {
   },
   flex (el, binding) {
     events.addClass(el, 'v-imgfill-flex-box')
-
-    if (el.getElementsByClassName('v-imgfill-expansion').length) return
-    var div = document.createElement('div')
-    div.className = 'v-imgfill-expansion'
+    let expansion = el.getElementsByClassName('v-imgfill-expansion')
+    let div = null
+    if (expansion.length) {
+      div = expansion[0]
+    } else {
+      div = document.createElement('div')
+      div.className = 'v-imgfill-expansion'
+      el.appendChild(div)
+    }
     div.style.paddingBottom = binding.value * 100 + '%'
-    el.appendChild(div)
   }
 }

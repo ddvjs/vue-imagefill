@@ -30,7 +30,7 @@ export default {
     events.addClass(el, 'v-imgfill-flex-box')
     let expansion = el.getElementsByClassName('v-imgfill-expansion')
     let div = null
-    if (expansion.length && parentNode.parentNode == el) {
+    if (expansion.length && expansion.parentNode == el) {
       div = expansion[0]
     } else {
       div = document.createElement('div')

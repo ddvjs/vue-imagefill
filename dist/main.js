@@ -195,7 +195,7 @@ exports.default = {
     _event2.default.addClass(el, 'v-imgfill-flex-box');
     var expansion = el.getElementsByClassName('v-imgfill-expansion');
     var div = null;
-    if (expansion.length && parentNode.parentNode == el) {
+    if (expansion.length && expansion.parentNode == el) {
       div = expansion[0];
     } else {
       div = document.createElement('div');

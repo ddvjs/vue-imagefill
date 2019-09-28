@@ -1,6 +1,7 @@
 // var webpack = require("webpack")
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   target: 'node',
@@ -49,6 +50,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('vue-imagefill.css')
+    new ExtractTextPlugin('vue-imagefill.css'),
+    new VueLoaderPlugin()
   ]
 }

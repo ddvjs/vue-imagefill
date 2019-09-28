@@ -1,4 +1,5 @@
 import Imagefill from './lib'
+import Flex from './lib/Flex.vue'
 
 export default {
   install (Vue) {
@@ -7,5 +8,6 @@ export default {
         Vue.directive(key, Imagefill[key])
       }
     }
+    Vue.component('v-flex', Flex)
   }
 }

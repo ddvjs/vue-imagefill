@@ -42,6 +42,5 @@ jspm_packages
 
 .git
 
-package-lock.json
 
 yarn.lock

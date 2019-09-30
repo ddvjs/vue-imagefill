@@ -1,6 +1,6 @@
 {
   "name": "vue-imagefill",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The Vue directive for making images fill their containers",
   "main": "./dist/main.js",
   "scripts": {
